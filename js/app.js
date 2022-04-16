@@ -187,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 1000,
     spaceBetween: 15,
     parallax: true,
-    draggable: false,
     navigation: {
       prevEl: '.swiper-button-prev',
       nextEl: '.swiper-button-next' 
