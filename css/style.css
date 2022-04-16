@@ -851,6 +851,7 @@ a {
 
   font-family: 'Indie Flower', cursive;
   color: #000;
+  text-shadow:  0 0 3px #000;
   border-radius: 10px;
   box-shadow: 0 0 2px #d4e7ff, 0 0 4px #d4e7ff, 0 0 6px #d4e7ff;
   background-color: #d4e7ff;
@@ -862,6 +863,14 @@ a {
 .btn_popup .swiper-button-prev::after, 
 .btn_popup .swiper-button-next::after {
   display: none;
+}
+.swiper-button-prev.swiper-button-disabled, 
+.swiper-button-next.swiper-button-disabled {
+  background-color: #6a737e !important;
+  box-shadow: 0 0 2px #6a737e, 0 0 4px #6a737e, 0 0 6px #6a737e !important;
+  color: #d4e7ff !important;
+  text-shadow: 0 0 3px #d4e7ff !important;
+  opacity: 1 !important;
 }
 
 .kittens_slide {
