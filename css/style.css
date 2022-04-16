@@ -954,7 +954,7 @@ a {
   align-items: center;
 
   background-color: #9fadbe;
-  box-shadow:  0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 2px #fff inset, 0 0 4px #fff inset, 0 0 4px #fff inset;
+  box-shadow: 0 0 10px #9fadbe, 0 0 5px #fff inset;
   padding: 15px;
   border-radius: 10px;
   margin: 0 auto;
