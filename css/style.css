@@ -874,7 +874,7 @@ a {
   box-shadow: 0 0 2px #6a737e, 0 0 4px #6a737e, 0 0 6px #6a737e !important;
   color: #d4e7ff !important;
   text-shadow: 0 0 3px #d4e7ff !important;
-  opacity: 1 !important;
+  opacity: 0.5 !important;
 }
 
 .kittens_slide {
@@ -941,23 +941,34 @@ a {
 
 /* FOOTER */
 .footer_section {
-  padding: 0;
+  padding: 10px;
   background-color: #d4e7ff;
-  border-top: 1px solid #ffffff80;
 }
 
 .footer {
   width: 100%;
-  max-width: 600px;
+  max-width: 1000px;
 
-  padding: 20px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #9fadbe;
+  box-shadow:  0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 2px #fff inset, 0 0 4px #fff inset, 0 0 4px #fff inset;
+  padding: 15px;
+  border-radius: 10px;
   margin: 0 auto;
+}
+
+.footer_text {
+  width: 100%;
+  max-width: 600px;
 }
 
 .text {
   font-size: 13px;
-  color: #000;
-  text-shadow: 0 0 2px #000;
+  color: #fff;
+  text-shadow: 0 0 2px #fff;
   text-align: center;
   transition: 0.3s ease;
 }
