@@ -193,8 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-
-
   popupSlider();
 
   function popupSlider() {
@@ -206,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i=0; slider_item_kittens.length > i; ++i) {
       slider_item_kittens[i].addEventListener('click', (event) => {
         event.preventDefault();
-
+        
         popup_container.classList.add('active');
         body[0].classList.add('block');
       })
@@ -217,6 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
       body[0].classList.remove('block');
     });
   };
+
+
 
 
 
