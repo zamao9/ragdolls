@@ -216,6 +216,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const swiperAdults = new Swiper('.slider_adults', {
+    loop: false,
+    speed: 1000,
+    spaceBetween: 15,
+    parallax: true,
+    navigation: {
+      prevEl: '.adults_btn_prev',
+      nextEl: '.adults_btn_next' 
+    }
+  })
+
+  popupAdults();
+
+  function popupAdults() {
+    let popup_cont = document.querySelector('.adults_popup'),
+        popup_clo = document.querySelector('.close_adults_popup'),
+        slider_item_adults = document.querySelectorAll('.gallery_photos_adults'),
+        body = document.getElementsByTagName('body');
+
+    for (let i=0; slider_item_adults.length > i; ++i) {
+      slider_item_adults[i].addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        popup_cont.classList.add('active');
+        body[0].classList.add('block');
+      })
+    };
+
+    popup_clo.addEventListener('click', (event) => {
+      popup_cont.classList.remove('active');
+      body[0].classList.remove('block');
+    });
+  };
+
 
 
 

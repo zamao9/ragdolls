@@ -714,7 +714,7 @@ a {
   border-radius: 10px;
 }
 
-.gallery_photos {
+.gallery_photos_kittens {
   width: 100%;
   height: 140px;
 
@@ -726,7 +726,29 @@ a {
   overflow: hidden;
   background-color: #000;
 }
-.gallery_photos img{
+.gallery_photos_kittens img{
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.gallery_photos_adults {
+  width: 100%;
+  height: 140px;
+
+  position: relative;
+
+  transition: 0.3s ease;
+
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #000;
+}
+.gallery_photos_adults img{
   width: 100%;
   height: 100%;
 
@@ -757,6 +779,30 @@ a {
   pointer-events: auto;
 }
 .popup {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+
+  background-color: #000;
+}
+
+.adults_popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.adults_popup {
   width: 100%;
   height: 100vh;
 
@@ -825,6 +871,56 @@ a {
   transform: translateX(-50%) rotate(-45deg)
 }
 
+.close_adults_popup {
+  position: absolute;
+  z-index: 101;
+  top: 30px;
+  right: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: #6a737e;
+  box-shadow: 0 0 2px #6a737e, 0 0 4px #6a737e, 0 0 6px #6a737e;
+  border-radius: 10px;
+}
+
+.close_adults_items {
+  width: 60%;
+  height: 1px;
+
+  position: relative;
+
+}
+.close_adults_items:before,
+.close_adults_items:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 50%;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: #d4e7ff;
+  box-shadow: 0 0 3px #d4e7ff;
+  border-radius: 5px;
+}
+.close_adults_items:before {
+  transform: translateX(-50%) rotate(45deg)
+}
+.close_adults_items:after {
+  transform: translateX(-50%) rotate(-45deg)
+}
+
+
 .slider_kittens {
   width: 90%;
   max-width: 1000px;
@@ -834,9 +930,21 @@ a {
   overflow: hidden;
 }
 
+.slider_adults {
+  width: 90%;
+  max-width: 1000px;
+  height: 300px;
+  max-height: 500px;
+
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
 .btn_popup {
-  position: relative;
-  
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+
   width: 80%;
   max-width: 1000px;
 
@@ -845,13 +953,14 @@ a {
 
 .btn_popup .swiper-button-prev, 
 .btn_popup .swiper-button-next {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-
   width: 60px;
   height: 30px;
+
+  position: static;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   font-family: 'Indie Flower', cursive;
   color: #000;
@@ -877,7 +986,69 @@ a {
   opacity: 0.5 !important;
 }
 
+.adults_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 80%;
+  max-width: 1000px;
+}
+
+.adults_btn .adults_btn_prev, 
+.adults_btn .adults_btn_next {
+  width: 60px;
+  height: 30px;
+
+  position: static;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  font-family: 'Indie Flower', cursive;
+  color: #000;
+  text-shadow:  0 0 3px #000;
+  border-radius: 10px;
+  box-shadow: 0 0 2px #d4e7ff, 0 0 4px #d4e7ff, 0 0 6px #d4e7ff;
+  background-color: #d4e7ff;
+}
+.adults_btn .adults_btn_prev {
+  left: 0;
+}
+.adults_btn .adults_btn_next {
+  right: 0;
+}
+
+
+.adults_btn .adults_btn_prev:focus, 
+.adults_btn .adults_btn_next:focus {
+  outline: none;
+}
+.adults_btn .adults_btn_prev::after, 
+.adults_btn .adults_btn_next::after {
+  display: none;
+}
+.adults_btn_prev.swiper-button-disabled, 
+.adults_btn_next.swiper-button-disabled {
+  background-color: #6a737e !important;
+  box-shadow: 0 0 2px #6a737e, 0 0 4px #6a737e, 0 0 6px #6a737e !important;
+  color: #d4e7ff !important;
+  text-shadow: 0 0 3px #d4e7ff !important;
+  opacity: 0.5 !important;
+  cursor: auto;
+}
+
 .kittens_slide {
+  width: 100%;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.adults_slide {
   width: 100%;
 
   overflow: hidden;
